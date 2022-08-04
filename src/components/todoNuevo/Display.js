@@ -27,7 +27,11 @@ function Display() {
         <RecetariosDisplay showRecetas={showRecetas} />
       </Scroll>
       {showRecetasState !== -1 && (
-        <Scroll id={2} name={`Recetas de ${recetarioName}`}>
+        <Scroll
+          id={2}
+          name={`Recetas de ${recetarioName}`}
+          addNewPath={"addReceta"}
+        >
           <RecetasDisplay
             recetaId={showRecetasState}
             showIngredientes={showIngredientes}
