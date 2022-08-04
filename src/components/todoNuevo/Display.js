@@ -30,7 +30,7 @@ function Display() {
         <Scroll
           id={2}
           name={`Recetas de ${recetarioName}`}
-          addNewPath={"addReceta"}
+          addNewPath={"/addReceta"}
         >
           <RecetasDisplay
             recetaId={showRecetasState}
@@ -42,7 +42,7 @@ function Display() {
         <Scroll
           id={2}
           name={`Ingredientes de ${recetaName}`}
-          addNewPath={"addIngrediente"}
+          addNewPath={"/addIngrediente"}
         >
           <IngredientesDisplay ingredienteId={showIngredientesState} />
         </Scroll>
