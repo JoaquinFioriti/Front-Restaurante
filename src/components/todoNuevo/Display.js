@@ -35,7 +35,11 @@ function Display() {
         </Scroll>
       )}
       {showIngredientesState !== -1 && (
-        <Scroll id={2} name={`Ingredientes de ${recetaName}`}>
+        <Scroll
+          id={2}
+          name={`Ingredientes de ${recetaName}`}
+          addNewPath={"addIngrediente"}
+        >
           <IngredientesDisplay ingredienteId={showIngredientesState} />
         </Scroll>
       )}
