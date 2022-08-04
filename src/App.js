@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route index element={<Display />}></Route>
+          {/* <Route index element={<Display />}></Route> */}
           {/* <Route path="Front-Restaurante" element={<Display />}></Route> */}
           <Route path="Front-Restaurante" element={<AddIngrediente />}></Route>
           <Route path="addReceta" element={<AddReceta />}></Route>
