@@ -5,8 +5,10 @@ import ButtonContainer from "../addItem/button/ButtonContainer";
 import Container from "../addItem/Container";
 import Tittle from "../addItem/Tittle";
 import { IngredienteService, RecetaService } from "../../services/services";
+import { useNavigate } from "react-router-dom";
 
 function AddReceta() {
+  const navigate = useNavigate();
   const [ingredientes, setIngredientes] = useState([]);
   const [ingredientesSelected, setIngredientesSelected] = useState([]);
   const [receta, setReceta] = useState({
@@ -53,6 +55,7 @@ function AddReceta() {
     } catch (error) {
       console.log(error);
     }
+    navigate("/Front-Restaurante");
   };
 
   return (

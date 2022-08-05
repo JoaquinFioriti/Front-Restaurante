@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "../addItem/button/Button";
 import ButtonContainer from "../addItem/button/ButtonContainer";
 import Container from "../addItem/Container";
 import Tittle from "../addItem/Tittle";
 import IngredienteFields from "./IngredienteFields";
 import { IngredienteService } from "../../services/services";
+import { useNavigate } from "react-router-dom";
 
 function AddIngrediente() {
+  const navigate = useNavigate();
   const [ingrediente, setIngrediente] = useState({
     id: 0,
     nombre: "",
@@ -25,6 +27,7 @@ function AddIngrediente() {
     } catch (error) {
       console.log(error);
     }
+    navigate("../Front-Restaurante");
   };
 
   return (

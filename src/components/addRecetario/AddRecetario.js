@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { RecetaService, RecetarioService } from "../../services/services";
 import Button from "../addItem/button/Button";
@@ -7,6 +8,7 @@ import Container from "../addItem/Container";
 import Tittle from "../addItem/Tittle";
 
 function AddRecetario() {
+  const navigate = useNavigate();
   const [recetas, setRecetas] = useState([]);
   const [recetasSelected, setRecetasSelected] = useState([]);
   const [recetario, setRecetario] = useState({
@@ -29,7 +31,7 @@ function AddRecetario() {
     fetchData();
   }, []);
 
-  recetas.map((receta) => {
+  recetas.forEach((receta) => {
     receta["value"] = receta["nombre"];
     receta["label"] = receta["nombre"];
   });
@@ -42,7 +44,7 @@ function AddRecetario() {
   const selectedRecetas = (e) => {
     let recetasFinal = [];
     setRecetasSelected(e);
-    recetasSelected.map((receta) => {
+    recetasSelected.forEach((receta) => {
       const { id, nombre, puntaje, ingredientes } = receta;
       recetasFinal.push({ id, nombre, puntaje, ingredientes });
     });
@@ -57,6 +59,7 @@ function AddRecetario() {
     } catch (error) {
       console.log(error);
     }
+    navigate("../Front-Restaurante");
   };
 
   return (
