@@ -23,7 +23,7 @@ function Display() {
 
   return (
     <div>
-      <Scroll id={1} name="Recetarios">
+      <Scroll id={1} name="Recetarios" addNewPath={"/addRecetario"}>
         <RecetariosDisplay showRecetas={showRecetas} />
       </Scroll>
       {showRecetasState !== -1 && (
